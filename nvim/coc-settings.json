@@ -1,0 +1,17 @@
+{
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  },
+  "clangd.path": "/Users/zls/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+  "snippets.ultisnips.pythonPrompt": false,
+  "git.gitlab.hosts": [
+    "gitlab.example.com",
+    "gitlab.com",
+    "code.byted.org"
+  ],
+  "git.enableGutters": true
+}
