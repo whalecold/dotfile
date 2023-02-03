@@ -1,0 +1,78 @@
+# 字体使用Soure Code Pro
+family: Source Code Pro
+
+env:
+  term: xterm-256color
+
+font:
+  size: 15
+
+
+# 实时重载配置文件，不用重启测试配置选项
+live_config_reload: true
+
+# 主题，抄肥猫的主题配色
+colors:
+  # Default colors
+  primary:
+    background: '0x013541'
+    foreground: '0xffffff'
+  # normal:
+  #   black:   '0x000000'
+  #   red:     '0xcd0000'
+  #   green:   '0x00cd00'
+  #   yellow:  '0xcdcd00'
+  #   blue:    '0x0000ee'
+  #   magenta: '0xcd00cd'
+  #   cyan:    '0x00cdcd'
+  #   white:   '0xe5e5e5'
+  # bright:
+  #   black:   '0x7f7f7f'
+  #   red:     '0xff0000'
+  #   green:   '0x00ff00'
+  #   yellow:  '0xffff00'
+  #   blue:    '0x5c5cff'
+  #   magenta: '0xff00ff'
+  #   cyan:    '0x00ffff'
+  #   white:   '0xffffff'
+
+window:
+  padding:
+    x: 0
+    y: 8
+  decorations: full
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+  # 背景不透明度
+  opacity: 0.84
+
+draw_bold_text_with_bright_colors: true
+
+# Mouse bindings
+#
+# Available fields:
+#   - mouse
+#   - action
+#   - mods (optional)
+#
+# Values for `mouse`:
+#   - Middle
+#   - Left
+#   - Right
+#   - Numeric identifier such as `5`
+#
+# All available `mods` and `action` values are documented in the key binding
+# section.
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
