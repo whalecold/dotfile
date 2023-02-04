@@ -26,6 +26,14 @@ vim.keymap.set('n', '<Leader>ds', function()
   widgets.centered_float(widgets.scopes)
 end)
 
+vim.keymap.set('n', '<Leader>dc', function()
+  dapui.close()
+end)
+
+vim.keymap.set('n', '<Leader>do', function()
+  dapui.open()
+end)
+
 dap.set_log_level('TRACE')
 
 dapui.setup {
@@ -43,20 +51,20 @@ dapui.setup {
   layouts = {
     {
       elements = {
-        { id = "scopes", size = 0.33 },
-        { id = "breakpoints", size = 0.17 },
-        { id = "stacks", size = 0.25 },
-        { id = "watches", size = 0.25 },
+        { id = "scopes", size = 0.40 },
+        { id = "breakpoints", size = 0.40 },
+        --{ id = "stacks", size = 0.25 },
+        --{ id = "watches", size = 0.25 },
       },
-      size = 0.33,
+      size = 0.20,
       position = "left",
     },
     {
       elements = {
-        { id = "repl", size = 0.45 },
-        { id = "console", size = 0.55 },
+        { id = "repl", size = 1 },
+        --{ id = "console", size = 0.55 },
       },
-      size = 0.27,
+      size = 0.30,
       position = "bottom",
     },
   },
@@ -73,12 +81,12 @@ dapui.setup {
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
-end
+-- dap.listeners.before.event_terminated["dapui_config"] = function()
+--   dapui.close()
+-- end
+-- dap.listeners.before.event_exited["dapui_config"] = function()
+--   dapui.close()
+-- end
 
 dap.defaults.auto_continue_if_many_stopped = true
 

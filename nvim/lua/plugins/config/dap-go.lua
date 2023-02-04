@@ -27,7 +27,7 @@ dap.adapters.go = function(callback, config)
 		end
 	end)
 	vim.defer_fn(function()
-		callback({ 
+		callback({
 			type = "server",
 			host = "127.0.0.1",
 			port = port,

@@ -1,31 +1,63 @@
 # 字体使用Soure Code Pro
-family: Source Code Pro
+family: MesloLGS NF
+#family: Source Code Pro
 
 env:
   term: xterm-256color
 
 font:
+  use_thin_strokes: true
+  normal:
+    family: MesloLGS NF
+    style:  Regular
+  bold:
+    family: MesloLGS NF
+    style:  Bold
+  italic:
+    family: MesloLGS NF
+    style:  Italic
   size: 15
-
 
 # 实时重载配置文件，不用重启测试配置选项
 live_config_reload: true
 
+  #colors:
+  #  primary:
+  #    background: '0x282828'
+  #    foreground: '0xebdbb2'
+  #  normal:
+  #    black:   '0x3c3836'
+  #    red:     '0xcc241d'
+  #    green:   '0x98971a'
+  #    yellow:  '0xd79921'
+  #    blue:    '0x458588'
+  #    magenta: '0xb16286'
+  #    cyan:    '0x689d6a'
+  #    white:   '0xebdbb2'
+  #  bright:
+  #    black:   '0x7c6f64'
+  #    red:     '0xfb4934'
+  #    green:   '0xb8bb26'
+  #    yellow:  '0xfabd2f'
+  #    blue:    '0x83a598'
+  #    magenta: '0xb3869b'
+  #    cyan:    '0x8ec07c'
+  #    white:   '0xfbf1c7'
 # 主题，抄肥猫的主题配色
-colors:
-  # Default colors
-  primary:
-    background: '0x013541'
-    foreground: '0xffffff'
-  # normal:
-  #   black:   '0x000000'
-  #   red:     '0xcd0000'
-  #   green:   '0x00cd00'
-  #   yellow:  '0xcdcd00'
-  #   blue:    '0x0000ee'
-  #   magenta: '0xcd00cd'
-  #   cyan:    '0x00cdcd'
-  #   white:   '0xe5e5e5'
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x013541'
+#    foreground: '0xffffff'
+#  normal:
+#    black:   '0x000000'
+#    red:     '0xcd0000'
+#    green:   '0x00cd00'
+#    yellow:  '0xcdcd00'
+#    blue:    '0x0000ee'
+#    magenta: '0xcd00cd'
+#    cyan:    '0x00cdcd'
+#    white:   '0xe5e5e5'
   # bright:
   #   black:   '0x7f7f7f'
   #   red:     '0xff0000'
@@ -36,6 +68,40 @@ colors:
   #   cyan:    '0x00ffff'
   #   white:   '0xffffff'
 
+colors:
+  primary:
+    #background: '#282a36'
+    background: '#252629'
+      #foreground: '#eff0eb'
+    foreground: '0xebdbb2'
+
+  cursor:
+    cursor: '#97979b'
+
+  selection:
+    text:       '#282a36'
+    background: '#c5deca'
+
+      #normal:
+      #  black:   '#282a36'
+      #  red:     '#ff5c57'
+      #  green:   '#5af78e'
+      #  yellow:  '#f3f99d'
+      #  blue:    '#57c7ff'
+      #  magenta: '#ff6ac1'
+      #  cyan:    '#9aedfe'
+      #  white:   '#f1f1f0'
+      #
+      #bright:
+      #  black:   '#686868'
+      #  red:     '#ff5c57'
+      #  green:   '#5af78e'
+      #  yellow:  '#f3f99d'
+      #  blue:    '#57c7ff'
+      #  magenta: '#ff6ac1'
+      #  cyan:    '#9aedfe'
+      #  white:   '#eff0eb'
+
 window:
   padding:
     x: 0
@@ -44,7 +110,7 @@ window:
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
   # 背景不透明度
-  opacity: 0.84
+  opacity: 1
 
 draw_bold_text_with_bright_colors: true
 
