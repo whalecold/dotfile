@@ -1,4 +1,4 @@
-local dap = require("plugins/config/dap")
+local dap = require'dap'
 
 dap.adapters.go = function(callback, config)
 	local stdout = vim.loop.new_pipe(false)
