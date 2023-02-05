@@ -52,6 +52,7 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go'
 Plug 'chentoast/marks.nvim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+Plug 'voldikss/vim-translator'
 call plug#end()
 
 " -------------------------------------------------------------------------------------------------
@@ -367,5 +368,27 @@ let g:blamer_template = '<author> <author-time> <summary>'
 "============================== coc-git ====================================
 lua require("plugins")
 lua require("toggleterm").setup()
+lua require('dap.ext.vscode').load_launchjs(nil, nil)
 
 nmap <silent> <leader>te  :<C-u>ToggleTerm direction=float<cr>
+
+"---------------------------------------------------------------------------
+" translator
+"---------------------------------------------------------------------------
+" Echo translation in the cmdline
+nmap <silent> <Leader>tt <Plug>Translate
+vmap <silent> <Leader>tv <Plug>TranslateV
+" Display translation in a window
+nmap <silent> <Leader>tw <Plug>TranslateW
+vmap <silent> <Leader>tw <Plug>TranslateWV
+" Replace the text with translation
+nmap <silent> <Leader>tr <Plug>TranslateR
+vmap <silent> <Leader>tr <Plug>TranslateRV
+" Translate the text in clipboard
+nmap <silent> <Leader>tx <Plug>TranslateX
+
+" only used for neovim
+" nnoremap <silent><expr> <M-f> translator#window#float#has_scroll() ?
+"                             \ translator#window#float#scroll(1) : "\<M-f>"
+" nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
+"                             \ translator#window#float#scroll(0) : "\<M-b>"
