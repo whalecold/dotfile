@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
+" A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " file search
@@ -41,6 +42,7 @@ Plug 'preservim/tagbar'
 " an efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'whalecold/ZoomWin'
+" git blame plugin
 Plug 'APZelos/blamer.nvim'
 "Plug 'dkprice/vim-easygrep'
 "Plug 'othree/eregex.vim'
@@ -392,3 +394,5 @@ nmap <silent> <Leader>tx <Plug>TranslateX
 "                             \ translator#window#float#scroll(1) : "\<M-f>"
 " nnoremap <silent><expr> <M-b> translator#window#float#has_scroll() ?
 "                             \ translator#window#float#scroll(0) : "\<M-b>"
+
+autocmd FileType dap-repl set statusline=status()
