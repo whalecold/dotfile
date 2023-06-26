@@ -15,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 " colorscheme
 Plug 'morhetz/gruvbox'
 Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.vim'
+" Plug 'iamcco/markdown-preview.vim'
 " A command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -42,6 +42,7 @@ Plug 'preservim/tagbar'
 " an efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'whalecold/ZoomWin'
+Plug 'vim-scripts/a.vim'
 " git blame plugin
 Plug 'APZelos/blamer.nvim'
 "Plug 'dkprice/vim-easygrep'
@@ -396,3 +397,10 @@ nmap <silent> <Leader>tx <Plug>TranslateX
 "                             \ translator#window#float#scroll(0) : "\<M-b>"
 
 autocmd FileType dap-repl set statusline=status()
+
+" set fold method
+set fdm=indent
+" set paste
+set foldlevelstart=99       " 打开文件是默认不折叠代码
+
+" short cut for debug
