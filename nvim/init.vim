@@ -181,7 +181,8 @@ let g:go_debug_windows = {
 
 " short cut for opening and closing NERDTree
 map <F3> :NERDTreeToggle<CR>
-nmap <Leader>rr :NERDTreeFocus<cr>R<c-w><c-p>
+" nmap <Leader>rr :NERDTreeFocus<cr>R<c-w><c-p>
+nmap <Leader>rr :NERDTreeFind<CR>
 let NERDTreeShowBookmarks=1
 
 " -------------------------------------------------------------------------------------------------
