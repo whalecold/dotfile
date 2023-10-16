@@ -4,6 +4,7 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
@@ -11,7 +12,7 @@ Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree-project-plugin'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 " colorscheme
 Plug 'morhetz/gruvbox'
 Plug 'iamcco/mathjax-support-for-mkdp'
@@ -41,7 +42,8 @@ Plug 'mattn/webapi-vim'
 Plug 'preservim/tagbar'
 " an efficient fuzzy finder that helps to locate files, buffers, mrus, gtags, etc. on the fly.
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'whalecold/ZoomWin'
+Plug 'markstory/vim-zoomwin'
+" Plug 'whalecold/ZoomWin'
 Plug 'vim-scripts/a.vim'
 " git blame plugin
 Plug 'APZelos/blamer.nvim'
@@ -56,6 +58,8 @@ Plug 'leoluz/nvim-dap-go'
 Plug 'chentoast/marks.nvim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'voldikss/vim-translator'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'iberianpig/tig-explorer.vim'
 call plug#end()
 
 " -------------------------------------------------------------------------------------------------
@@ -298,7 +302,7 @@ let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 let g:Lf_ShortcutF = "<leader>ff"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf bugTag %s", "")<CR><CR>
+" noremap <leader>ft :<C-U><C-R>=printf("Leaderf tag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 noremap <leader>fw :<C-U><C-R>=printf("Leaderf window %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf function %s", "")<CR><CR>
@@ -403,5 +407,11 @@ autocmd FileType dap-repl set statusline=status()
 set fdm=indent
 " set paste
 set foldlevelstart=99       " 打开文件是默认不折叠代码
+set spell
+
+" don't use builtin terminal
+let g:tig_explorer_use_builtin_term=0
 
 " short cut for debug
+"
+set tags=/Users/zls/workspace/bytedance/project/src/github.com/envoyproxy/envoy/tags

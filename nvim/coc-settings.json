@@ -7,11 +7,16 @@
     }
   },
   "clangd.path": "/Users/zls/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
-  "snippets.ultisnips.pythonPrompt": false,
+  "snippets.ultisnips.pythonPrompt": true,
   "git.gitlab.hosts": [
     "gitlab.example.com",
     "gitlab.com",
     "code.byted.org"
   ],
-  "git.enableGutters": true
+  "git.enableGutters": true,
+  "java.enabled": true,
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable",
+  "java.import.maven.enabled": true,
+  "java.trace.server": "verbose"
 }
