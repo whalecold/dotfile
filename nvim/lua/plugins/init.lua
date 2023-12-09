@@ -29,8 +29,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 	callback = function ()
 		-- get the current buffer name
 		local buffername = vim.api.nvim_get_current_buf()
-		-- the function is deprecated, should update.
-		local buftype = vim.api.nvim_buf_get_option(buffername, "buftype")
+		local buftype = vim.api.nvim_get_option_value("buftype", {})
 		vim.notify(buftype, vim.log.levels.DEBUG, {})
 		-- vim.notify(buffert, vim.log.levels.INFO, {})
 		if buftype == "" then
