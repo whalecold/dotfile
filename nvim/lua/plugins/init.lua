@@ -27,10 +27,13 @@ require("toggleterm").setup{
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 	callback = function ()
-		-- local file = vim.fn.expand('%')
-		local buffer_name = vim.api.nvim_buf_get_name(0)
-		-- vim.notify(buffer_name, vim.log.levels.ERROR, {})
-		if string.match(buffer_name, "NERD") == nil then
+		-- get the current buffer name
+		local buffername = vim.api.nvim_get_current_buf()
+		-- the function is deprecated, should update.
+		local buftype = vim.api.nvim_buf_get_option(buffername, "buftype")
+		vim.notify(buftype, vim.log.levels.DEBUG, {})
+		-- vim.notify(buffert, vim.log.levels.INFO, {})
+		if buftype == "" then
 			vim.fn.execute("write")
 		end
 	end,
