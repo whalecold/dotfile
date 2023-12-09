@@ -58,8 +58,16 @@ Plug 'leoluz/nvim-dap-go'
 Plug 'chentoast/marks.nvim'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'voldikss/vim-translator'
+Plug 'solarnz/thrift.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'iberianpig/tig-explorer.vim'
+
+" bazel
+Plug 'google/vim-maktaba'
+Plug 'bazelbuild/vim-bazel'
+
+" format tools
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 " -------------------------------------------------------------------------------------------------
@@ -399,10 +407,18 @@ let g:blamer_template = '<author> <author-time> <summary>'
 
 "============================== coc-git ====================================
 lua require("plugins")
-lua require("toggleterm").setup()
 lua require('dap.ext.vscode').load_launchjs(nil, nil)
 
 nmap <silent> <leader>te  :<C-u>ToggleTerm direction=float<cr>
+" set
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+" By applying the mappings this way you can pass a count to your
+" mapping to open a specific window.
+" For example: 2<C-t> will open terminal 2
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 "---------------------------------------------------------------------------
 " translator
@@ -431,7 +447,6 @@ autocmd FileType dap-repl set statusline=status()
 set fdm=indent
 " set paste
 set foldlevelstart=99       " 打开文件是默认不折叠代码
-set spell
 
 " don't use builtin terminal
 let g:tig_explorer_use_builtin_term=0
@@ -439,3 +454,24 @@ let g:tig_explorer_use_builtin_term=0
 " short cut for debug
 "
 set tags=/Users/zls/workspace/bytedance/project/src/github.com/envoyproxy/envoy/tags
+
+
+"---------------------------------------------------------------------------
+" format setting
+"---------------------------------------------------------------------------
+let g:neoformat_c_clangformat = {
+            \ 'exe': 'clang-format',
+            \ 'args': ['-assume-filename=%:p','--styel=/Users/zls/.config/nvim/style/.google-c-clang-format'],
+            \ 'stdin': 0,
+			\ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_c = ['clangformat']
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
+
+set verbosefile=/Users/zls/.cache/nvim/dap.log
+set verbose=1
