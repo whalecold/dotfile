@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 		-- local file = vim.fn.expand('%')
 		local buffer_name = vim.api.nvim_buf_get_name(0)
 		-- vim.notify(buffer_name, vim.log.levels.ERROR, {})
-		if string.match(buffer_name, "NERD_tree_1") == nil then
+		if string.match(buffer_name, "NERD") == nil then
 			vim.fn.execute("write")
 		end
 	end,

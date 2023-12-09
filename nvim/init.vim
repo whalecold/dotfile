@@ -473,5 +473,6 @@ augroup fmt
   autocmd BufWritePre * Neoformat
 augroup END
 
-set verbosefile=/Users/zls/.cache/nvim/dap.log
-set verbose=1
+" switch header in cc file
+map <F2> :CocCommand clangd.switchSourceHeader<CR>
+
